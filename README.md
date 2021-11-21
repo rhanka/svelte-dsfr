@@ -43,6 +43,8 @@ C'est le package minimal pour faire un site !
 - ajouter l'exploration des composants
 - ajouter les tests ui
 - doc pour contributeurs et ré-utilisateurs
+- versionning
+- github ci
 
 ## Contribs
 
