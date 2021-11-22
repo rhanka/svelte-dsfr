@@ -28,16 +28,26 @@ La démarche est très inspirée de [vue-dsfr](https://github.com/dnum-mi/vue-ds
 
 ## Etapes
 
-1. Porter les composants coeurs: Buttons, Inputs, Header, Forms
-   C'est le package minimal pour faire un site !
+1. Porter les composants coeurs: Buttons, Inputs, Header, Forms, Footer
 
-- Les icônes sont un prérequis.
-- Cette première étape est une "recopie" des composants `vue-dsfr`. Elle vise à valider la démarche de portage, notamment les problèmes de routeurs qui seront peut être repoussés
-- L'objectif est de faire une mini demo.
+   En cours ! N'offre aucune pérennité dans les interfaces à ce stade. L'objectif est de faire une mini demo
+   Cette première étape est une "recopie" des composants `vue-dsfr` avec un portage minimaliste.
 
-2. Offrir en composant à une application tierce
+Indispensables :
 
-- Le scaffolding css doit être ajouté en plus à cette étape.
+- [x] Les icônes (@iconify/svelte)
+- [x] Le scaffolding css doit être ajouté en plus à cette étape
+- [x] La publication npm doit être initiée
+
+Non pris en compte:
+
+- versionning
+- bon fonctionnement (menus, etc)
+- accessibilité (codé mais non testé)
+- tests CI/CD
+
+2. Tester la réutilisabilité pour une application tierce
+
 - MVP: portage [judilibre-stats](https://github.com/Cour-de-cassation/judilibre-stats)
 - POC: portage [deces-ui](https://github.com/matchID/deces-ui) (beaucoup plus d'impact)
 
