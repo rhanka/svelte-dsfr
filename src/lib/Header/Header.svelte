@@ -81,17 +81,15 @@
           </div>
           {#if serviceTitle}
             <div class="fr-header__service">
-              <!-- <router-link
-                          :to="homeTo"
-                          :title="`Accueil - ${serviceTitle}`"
-                          v-bind="$attrs"
-                          > -->
-              <a href="/">
+              <a
+                href={homeTo}
+                title={`Accueil - ${serviceTitle}`}
+                rel={homeTo.startsWith('http') ? 'external' : undefined}
+              >
                 <p class="fr-header__service-title">
                   {serviceTitle}
                 </p>
               </a>
-              <!-- </router-link> -->
               {#if serviceDescription}
                 <p class="fr-header__service-tagline">
                   {serviceDescription}
