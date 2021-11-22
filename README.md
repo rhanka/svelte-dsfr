@@ -22,6 +22,7 @@ La démarche est très inspirée de [vue-dsfr](https://github.com/dnum-mi/vue-ds
 - tests unitaires : jest
 - component explorer: Storybook
 - tests ui: playwright
+- tests accessibilité: axe-playwright ou pa11y ?
 
 ## Etapes
 
