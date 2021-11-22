@@ -1,45 +1,45 @@
 <script lang="ts">
-  import '@gouvfr/dsfr/dist/scheme/scheme.css';
-  import '@gouvfr/dsfr/dist/core/core.css';
-  import '@gouvfr/dsfr/dist/component/navigation/navigation.css';
-  import '@gouvfr/dsfr/dist/component/modal/modal.css';
-  import '@gouvfr/dsfr/dist/component/header/header.css';
+  import '@gouvfr/dsfr/dist/scheme/scheme.css'
+  import '@gouvfr/dsfr/dist/core/core.css'
+  import '@gouvfr/dsfr/dist/component/navigation/navigation.css'
+  import '@gouvfr/dsfr/dist/component/modal/modal.css'
+  import '@gouvfr/dsfr/dist/component/header/header.css'
 
-  import Icon from '@iconify/svelte';
-  import Logo from '$lib/Logo/Logo.svelte';
-  import SearchBar from '$lib/SearchBar/SearchBar.svelte';
-  import HeaderMenuLinks from '$lib/Header/HeaderMenuLinks.svelte';
+  import Icon from '@iconify/svelte'
+  import Logo from '$lib/Logo/Logo.svelte'
+  import SearchBar from '$lib/SearchBar/SearchBar.svelte'
+  import HeaderMenuLinks from '$lib/Header/HeaderMenuLinks.svelte'
 
-  export let serviceTitle: string;
-  export let serviceDescription: string;
-  export let homeTo: string = '/';
-  export let value: string = '';
-  export let quickLinks: any;
-  export let showSearch: boolean;
-  export let logoText: string | string[];
+  export let serviceTitle: string
+  export let serviceDescription: string
+  export let homeTo: string = '/'
+  export let value: string = ''
+  export let quickLinks: any
+  export let showSearch: boolean
+  export let logoText: string | string[]
 
-  let menuOpened: boolean = false;
-  let searchModalOpened: boolean = false;
-  let modalOpend: boolean = false;
+  let menuOpened: boolean = false
+  let searchModalOpened: boolean = false
+  let modalOpend: boolean = false
 
   const hideModal = () => {
-    modalOpened = false;
-    menuOpened = false;
-    searchModalOpened = false;
-  };
+    modalOpened = false
+    menuOpened = false
+    searchModalOpened = false
+  }
   const showModal = () => {
-    modalOpened = true;
-  };
+    modalOpened = true
+  }
 
   const showMenu = () => {
-    showModal();
-    menuOpened = true;
-  };
+    showModal()
+    menuOpened = true
+  }
 
   const showSearchModal = () => {
-    showModal();
-    searchModalOpened = true;
-  };
+    showModal()
+    searchModalOpened = true
+  }
 </script>
 
 <header role="banner" class="fr-header">
