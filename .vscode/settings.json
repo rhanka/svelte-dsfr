@@ -1,12 +1,9 @@
 {
-  "conventionalCommits.scopes": [
-    "releases",
-    "dx"
-  ],
+  "conventionalCommits.scopes": ["releases", "dx"],
   "editor": {
-     "bracketPairColorization.enabled": true,
-     "tabSize": 2
-  }, 
+    "bracketPairColorization.enabled": true,
+    "tabSize": 2
+  },
   "emmet.includeLanguages": {
     "vue-html": "html",
     "postcss": "css"
@@ -14,9 +11,9 @@
   "emmet.syntaxProfiles": {
     "postcss": "css"
   },
-  "eslint.workingDirectories": [{ "mode": "auto"}],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
   "files.associations": {
     "*.css": "postcss"
   },
-  "jest.jestCommandLine": "./node_modules/.bin/jest",
+  "jest.jestCommandLine": "./node_modules/.bin/jest"
 }
