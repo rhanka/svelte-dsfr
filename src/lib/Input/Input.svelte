@@ -15,12 +15,12 @@
 >
 
 <script lang="ts">
-  import '@gouvfr/dsfr/dist/scheme/scheme.css';
-  import '@gouvfr/dsfr/dist/core/core.css';
-  import '@gouvfr/dsfr/dist/component/form/form.css';
-  import '@gouvfr/dsfr/dist/component/link/link.css';
-  import '@gouvfr/dsfr/dist/component/button/button.css';
-  import '@gouvfr/dsfr/dist/component/input/input.css';
+  import '@gouvfr/dsfr/dist/scheme/scheme.css'
+  import '@gouvfr/dsfr/dist/core/core.css'
+  import '@gouvfr/dsfr/dist/component/form/form.css'
+  import '@gouvfr/dsfr/dist/component/link/link.css'
+  import '@gouvfr/dsfr/dist/component/button/button.css'
+  import '@gouvfr/dsfr/dist/component/input/input.css'
 
   import uuid from 'uuid-random';
 

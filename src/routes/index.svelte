@@ -6,11 +6,13 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>svelte-dsfr</title>
 </svelte:head>
 
 <section>
-	To be continued...
+	<h1>
+		A suivre ...
+	</h1>
 </section>
 
 <style>

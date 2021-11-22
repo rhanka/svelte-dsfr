@@ -3,62 +3,64 @@
     class="fr-header"
 >
     <div class="fr-header__body">
-        <div class="fr-container  width-inherit">
+        <div class="fr-container">
             <div class="fr-header__body-row">
-                <div class="fr-header__brand  fr-enlarge-link">
-                <div class="fr-header__brand-top">
-                    <div class="fr-header__logo">
-                    <Logo
-                        logoText={logoText}
-                        data-testid="header-logo"
-                    />
-                    </div>
-                    {#if showSearch || (quickLinks && quickLinks.length)}
-                        <div class="fr-header__navbar">
-                            <button
-                                class="fr-btn--menu  fr-btn"
-                                aria-controls="header-search"
-                                aria-label="Recherche"
-                                title="Recherche"
-                                data-fr-opened={modalOpened}
-                                on:click={showSearchModal}
-                            >
-                                <Icon icon="ri:search-line"/>
-                            </button>
-                            <button
-                                id="button-menu"
-                                class="fr-btn--menu  fr-btn"
-                                data-fr-opened={modalOpened}
-                                aria-controls="header-navigation"
-                                aria-haspopup="menu"
-                                aria-label="Menu"
-                                title="Menu"
-                                data-testid="open-menu-btn"
-                                on:click={showMenu}
-                            >
-                                <Icon icon="ri:menu-fill"/>
-                            </button>
-                        </div>
-                    {/if}
-                </div>
-                {#if serviceTitle}
-                    <div class="fr-header__service">
-                        <!-- <router-link
-                        :to="homeTo"
-                        :title="`Accueil - ${serviceTitle}`"
-                        v-bind="$attrs"
-                        > -->
-                        <p class="fr-header__service-title">
-                            { serviceTitle }
-                        </p>
-                        <!-- </router-link> -->
-                        {#if serviceDescription}
-                            <p class="fr-header__service-tagline">
-                                { serviceDescription }
+                <div class="fr-header__brand fr-enlarge-link">
+                  <div class="fr-header__brand-top">
+                      <div class="fr-header__logo">
+                      <Logo
+                          logoText={logoText}
+                          data-testid="header-logo"
+                      />
+                      </div>
+                      {#if showSearch || (quickLinks && quickLinks.length)}
+                          <div class="fr-header__navbar">
+                              <button
+                                  class="fr-btn--menu  fr-btn"
+                                  aria-controls="header-search"
+                                  aria-label="Recherche"
+                                  title="Recherche"
+                                  data-fr-opened={modalOpened}
+                                  on:click={showSearchModal}
+                              >
+                                  <Icon icon="ri:search-line"/>
+                              </button>
+                              <button
+                                  id="button-menu"
+                                  class="fr-btn--menu  fr-btn"
+                                  data-fr-opened={modalOpened}
+                                  aria-controls="header-navigation"
+                                  aria-haspopup="menu"
+                                  aria-label="Menu"
+                                  title="Menu"
+                                  data-testid="open-menu-btn"
+                                  on:click={showMenu}
+                              >
+                                  <Icon icon="ri:menu-fill"/>
+                              </button>
+                          </div>
+                      {/if}
+                  </div>
+                  {#if serviceTitle}
+                      <div class="fr-header__service">
+                          <!-- <router-link
+                          :to="homeTo"
+                          :title="`Accueil - ${serviceTitle}`"
+                          v-bind="$attrs"
+                          > -->
+                          <a href="/">
+                            <p class="fr-header__service-title">
+                                { serviceTitle }
                             </p>
-                        {/if}
-                    </div>
-                {/if}
+                          </a>
+                          <!-- </router-link> -->
+                          {#if serviceDescription}
+                              <p class="fr-header__service-tagline">
+                                  { serviceDescription }
+                              </p>
+                          {/if}
+                      </div>
+                  {/if}
                 </div>
                 <div class="fr-header__tools">
                     {#if quickLinks && quickLinks.length }
@@ -116,10 +118,11 @@
     </div>
 </header>
 <script lang="ts">
-import '@gouvfr/dsfr/dist/scheme/scheme.css';
-import '@gouvfr/dsfr/dist/core/core.css';
-import '@gouvfr/dsfr/dist/component/navigation/navigation.css';
-import '@gouvfr/dsfr/dist/component/modal/modal.css';
+import '@gouvfr/dsfr/dist/scheme/scheme.css'
+import '@gouvfr/dsfr/dist/core/core.css'
+import '@gouvfr/dsfr/dist/component/navigation/navigation.css'
+import '@gouvfr/dsfr/dist/component/modal/modal.css'
+import '@gouvfr/dsfr/dist/component/header/header.css'
 
 import Icon from '@iconify/svelte';
 import Logo from '$lib/Logo/Logo.svelte'
