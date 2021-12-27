@@ -1,67 +1,68 @@
 <script lang="ts">
+  import { goto } from '$app/navigation';
+
   import '@gouvfr/dsfr/dist/scheme/scheme.css'
   import '@gouvfr/dsfr/dist/core/core.css'
   import '@gouvfr/dsfr/dist/component/link/link.css'
 
   import Icon from '@iconify/svelte'
 
-  export let path: string
+  export let href: string
   export let button: boolean
-  export let iconOnly: boolean
   export let iconRight: boolean
   export let icon: string
   export let label: string
-  export let onClick: any = () => {}
-
-  const is = () => {
-    if (button) {
-      return 'button'
-    }
-    return path.startsWith('http') ? 'a' : 'router-link'
+  export let onClick: any = () => {
+    goto(href)
   }
 
-  const to = () => {
-    return button || path.startsWith('http') ? undefined : path
-  }
-
-  const href = () => {
-    return !button && ath.startsWith('http') ? path : undefined
-  }
 </script>
 
-<div
-  {is}
-  class="fr-link flex"
-  to="to"
-  href="href"
-  class:reverse={iconRight}
-  on:click|preventDefault={onClick}
->
-  {#if icon}
-    <Icon
-      {icon}
-      label={iconOnly ? label : undefined}
-      class={iconRight ? 'icon-right' : iconOnly ? 'icon-left' : ''}
-    />
-  {/if}
-  {#if !iconOnly}
-    {label}
-  {/if}
-</div>
+{#if button}
+  <button
+    class="fr-link"
+    class:reverse={iconRight}
+    on:click|preventDefault={onClick}
+  >
+    {#if icon}
+      <span
+        class="icon"
+        class:fr-ml-1v={label && iconRight}
+        class:fr-mr-1v={label && !iconRight}
+      >
+        <Icon {icon}/>
+      </span>
+    {/if}
+    {#if label}
+      {label}
+    {/if}
+  </button>
+{:else}
+  <a
+    href={href}
+    class="fr-link"
+    class:reverse={iconRight}
+    target={href.startsWith('http') ? '_blank' : ''}
+  >
+    {#if icon}
+      <span
+        class="icon"
+        class:fr-ml-1w={label && iconRight}
+        class:fr-mr-1w={label && !iconRight}
+      >
+        <Icon {icon}/>
+      </span>
+    {/if}
+    {#if label}
+      {label}
+    {/if}
+  </a>
+{/if}
 
 <style scoped>
-  .icon-left {
-    margin-right: 0.5rem;
+  .icon {
+    margin-bottom: -0.25rem;
   }
-  .icon-right {
-    margin-left: 0.5rem;
-  }
-
-  .flex {
-    display: flex;
-    align-items: center;
-  }
-
   .reverse {
     flex-direction: row-reverse;
   }

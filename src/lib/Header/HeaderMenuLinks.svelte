@@ -11,7 +11,7 @@
 <ul class="fr-links-group">
   {#each links as quickLink, index}
     <li>
-      <HeaderMenuLink {quickLink} />
+      <HeaderMenuLink {...quickLink} />
     </li>
   {/each}
 </ul>

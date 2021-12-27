@@ -20,7 +20,7 @@
 
   let menuOpened: boolean = false
   let searchModalOpened: boolean = false
-  let modalOpend: boolean = false
+  let modalOpened: boolean = false
 
   const hideModal = () => {
     modalOpened = false
@@ -101,7 +101,9 @@
         <div class="fr-header__tools">
           {#if quickLinks && quickLinks.length}
             <div class="fr-header__tools-links">
-              <HeaderMenuLinks v-if="!menuOpened" :links="quickLinks" />
+              {#if !menuOpened}
+                <HeaderMenuLinks links={quickLinks}/>
+              {/if}
             </div>
           {/if}
           {#if showSearch}
@@ -130,7 +132,7 @@
             </button>
             <div class="fr-header__menu-links">
               {#if menuOpened}
-                <HeaderMenuLinks links="quickLinks" />
+                <HeaderMenuLinks links={quickLinks} />
               {/if}
             </div>
             {#if searchModalOpened}

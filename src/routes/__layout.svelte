@@ -3,9 +3,18 @@
   import Footer from '$lib/Footer/Footer.svelte'
   import '@gouvfr/dsfr/dist/scheme/scheme.css'
   import '@gouvfr/dsfr/dist/core/core.css'
+
+  const quickLinks=[
+    { label: "Documentation", href: "https://gouvfr.atlassian.net/wiki/spaces/DB/pages/193036295/COMPOSANTS" },
+    { label: "Github", icon: "logos:github-icon", href: "https://github.com/rhanka/svelte-dsfr" }
+  ]
 </script>
 
-<Header serviceTitle="svelte-dsfr" serviceDescription="design system de l'État pour Sveltekit" />
+<Header
+  serviceTitle="svelte-dsfr"
+  serviceDescription="design system de l'État pour Sveltekit"
+  quickLinks={quickLinks}
+/>
 
 <main>
   <div class="fr-container">
