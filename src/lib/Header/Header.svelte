@@ -54,7 +54,7 @@
             {#if showSearch || (quickLinks && quickLinks.length)}
               <div class="fr-header__navbar">
                 <button
-                  class="fr-btn--menu  fr-btn"
+                  class="fr-btn--menu fr-btn"
                   aria-controls="header-search"
                   aria-label="Recherche"
                   title="Recherche"

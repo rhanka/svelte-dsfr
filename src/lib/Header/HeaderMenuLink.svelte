@@ -20,7 +20,8 @@
 
 {#if button}
   <button
-    class="fr-link"
+    class="fr-btn"
+    class:fr-link={href}
     class:reverse={iconRight}
     on:click|preventDefault={onClick}
   >

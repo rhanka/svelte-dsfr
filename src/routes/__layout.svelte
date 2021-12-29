@@ -5,8 +5,8 @@
   import '@gouvfr/dsfr/dist/core/core.css'
 
   const quickLinks=[
-    { label: "Documentation", href: "https://gouvfr.atlassian.net/wiki/spaces/DB/pages/193036295/COMPOSANTS" },
-    { label: "Github", icon: "logos:github-icon", href: "https://github.com/rhanka/svelte-dsfr" }
+    { label: "Documentation", icon: "ri:book-line", href: "https://gouvfr.atlassian.net/wiki/spaces/DB/pages/193036295/COMPOSANTS" },
+    { label: "Github", icon: "ri:github-line", href: "https://github.com/rhanka/svelte-dsfr" }
   ]
 </script>
 
