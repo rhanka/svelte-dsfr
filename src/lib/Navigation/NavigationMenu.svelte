@@ -38,9 +38,7 @@
     <slot />
     {#each links as link, idx}
       <NavigationMenuItem>
-        <NavigationMenuLink
-          {...link}
-        />
+        <NavigationMenuLink {link} />
       </NavigationMenuItem>
     {/each}
   </ul>
