@@ -53,29 +53,33 @@
             </div>
             {#if showSearch || (quickLinks && quickLinks.length)}
               <div class="fr-header__navbar">
-                <button
-                  class="fr-btn--menu fr-btn"
-                  aria-controls="header-search"
-                  aria-label="Recherche"
-                  title="Recherche"
-                  data-fr-opened={modalOpened}
-                  on:click={showSearchModal}
-                >
-                  <Icon icon="ri:search-line" />
-                </button>
-                <button
-                  id="button-menu"
-                  class="fr-btn--menu  fr-btn"
-                  data-fr-opened={modalOpened}
-                  aria-controls="header-navigation"
-                  aria-haspopup="menu"
-                  aria-label="Menu"
-                  title="Menu"
-                  data-testid="open-menu-btn"
-                  on:click={showMenu}
-                >
-                  <Icon icon="ri:menu-fill" />
-                </button>
+                {#if showSearch}
+                  <button
+                    class="fr-btn--search fr-btn"
+                    aria-controls="header-search"
+                    aria-label="Recherche"
+                    title="Recherche"
+                    data-fr-opened={modalOpened}
+                    on:click={showSearchModal}
+                  >
+                    <Icon icon="ri:search-line" />
+                  </button>
+                {/if}
+                {#if (quickLinks && quickLinks.length) || $$slots.navigation}
+                  <button
+                    id="button-menu"
+                    class="fr-btn--menu fr-btn"
+                    data-fr-opened={modalOpened}
+                    aria-controls="header-navigation"
+                    aria-haspopup="menu"
+                    aria-label="Menu"
+                    title="Menu"
+                    data-testid="open-menu-btn"
+                    on:click={showMenu}
+                  >
+                    <Icon icon="ri:menu-fill" />
+                  </button>
+                {/if}
               </div>
             {/if}
           </div>
@@ -116,7 +120,7 @@
       {#if showSearch || (quickLinks && quickLinks.length)}
         <div
           id="header-navigation"
-          class="fr-header__menu  fr-modal"
+          class="fr-header__menu fr-modal"
           class:fr-modal--opened={modalOpened}
           aria-labelledby="button-menu"
         >
@@ -127,7 +131,6 @@
               data-testid="close-modal-btn"
               on:click={hideModal}
             >
-              <Icon icon="ri:close-line" />
               Fermer
             </button>
             <div class="fr-header__menu-links">
@@ -140,6 +143,7 @@
                 <SearchBar blind:value={value} style="justify-content: flex-end" />
               </div>
             {/if}
+            <slot name="navigation"/>
           </div>
         </div>
       {/if}
