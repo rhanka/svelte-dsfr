@@ -1,0 +1,9 @@
+.fr-header .fr-links-group .fr-link::before,
+.fr-link--close::before,
+.fr-icon {
+  margin-bottom: -0.25rem;
+}
+
+.fr-row-reverse {
+  flex-direction: row-reverse;
+}

@@ -4,6 +4,7 @@
   import Footer from '$lib/Footer/Footer.svelte'
   import '@gouvfr/dsfr/dist/scheme/scheme.css'
   import '@gouvfr/dsfr/dist/core/core.css'
+  import '../app.css'
 
   const quickLinks=[
     { label: "Documentation", icon: "ri:book-line", to: "https://gouvfr.atlassian.net/wiki/spaces/DB/pages/193036295/COMPOSANTS" },

@@ -42,12 +42,12 @@
   <a
     href={to}
     class="fr-link"
-    class:reverse={iconRight}
+    class:fr-row-reverse={iconRight}
     target={to.startsWith('http') ? '_blank' : ''}
   >
     {#if icon}
       <span
-        class="icon"
+        class="fr-icon"
         class:fr-ml-1w={label && iconRight}
         class:fr-mr-1w={label && !iconRight}
       >
@@ -59,12 +59,3 @@
     {/if}
   </a>
 {/if}
-
-<style scoped>
-  .icon {
-    margin-bottom: -0.25rem;
-  }
-  .reverse {
-    flex-direction: row-reverse;
-  }
-</style>
