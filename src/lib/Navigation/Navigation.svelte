@@ -42,18 +42,18 @@ const toggle = (id) => {
       <NavigationItem>
         {#if navItem && navItem.to && navItem.text}
           <NavigationMenuLink
-            {navItem}
+            {...navItem}
             on:click={toggle(navItem.id)}
           />
         {:else if navItem && navItem.title && navItem.links}
           <NavigationMenu
-            {navItem}
+            {...navItem}
             expanded={navItem.id === expandedMenuId}
             onClickCallback={() => toggle(navItem.id)}
           />
         {:else if navItem && navItem.title && navItem.menus}
           <NavigationMegaMenu
-            {navItem}
+            {...navItem}
             expanded={navItem.id === expandedMenuId}
             onClickCallback={() => toggle(navItem.id)}
           />

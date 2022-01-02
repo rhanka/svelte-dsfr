@@ -4,7 +4,7 @@
   import '@gouvfr/dsfr/dist/component/navigation/navigation.css'
 
   import Icon from '@iconify/svelte'
-  import NavigationMegaMenuCategory from '$lib/Navigation/NavigationMegaMenuCategory.vue'
+  import NavigationMegaMenuCategory from '$lib/Navigation/NavigationMegaMenuCategory.svelte'
 
   import uuid from 'uuid-random'
 
@@ -64,7 +64,7 @@
       <!-- @slot Slot par défaut pour le contenu du mega-menu. Sera dans `<div class="fr-grid-row fr-grid-row--gutters">` -->
       <slot />
       {#each menus as menu, idx}
-        <NavigationMegaMenuCategory {menu} />
+        <NavigationMegaMenuCategory {...menu} />
       {/each}
     </div>
   </div>

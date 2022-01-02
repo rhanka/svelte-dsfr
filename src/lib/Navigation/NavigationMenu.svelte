@@ -1,7 +1,7 @@
 <script lang="ts">
-  import '@gouvfr//dist/scheme/scheme.css'
-  import '@gouvfr//dist/core/core.css'
-  import '@gouvfr//dist/component/navigation/navigation.css'
+  import '@gouvfr/dsfr/dist/scheme/scheme.css'
+  import '@gouvfr/dsfr/dist/core/core.css'
+  import '@gouvfr/dsfr/dist/component/navigation/navigation.css'
 
   import Icon from '@iconify/svelte'
   import NavigationMenuItem from '$lib/Navigation/NavigationMenuItem.svelte'
@@ -38,7 +38,7 @@
     <slot />
     {#each links as link, idx}
       <NavigationMenuItem>
-        <NavigationMenuLink {link} />
+        <NavigationMenuLink {...link} />
       </NavigationMenuItem>
     {/each}
   </ul>
