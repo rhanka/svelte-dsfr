@@ -16,6 +16,7 @@
   export let value: string = ''
   export let quickLinks: any
   export let showSearch: boolean
+  export let displayParams: boolean
   export let logoText: string | string[]
 
   let menuOpened: boolean = false
@@ -106,7 +107,7 @@
           {#if quickLinks && quickLinks.length}
             <div class="fr-header__tools-links">
               {#if !menuOpened}
-                <HeaderMenuLinks links={quickLinks}/>
+                <HeaderMenuLinks links={quickLinks} displayParams={displayParams}/>
               {/if}
             </div>
           {/if}

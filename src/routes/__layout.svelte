@@ -1,5 +1,6 @@
 <script lang="ts">
   import Header from '$lib/Header/Header.svelte'
+  import DisplayParamsModal from '$lib/DisplayParams/DisplayParamsModal.svelte'
   import Navigation from '$lib/Navigation/Navigation.svelte'
   import Footer from '$lib/Footer/Footer.svelte'
   import '@gouvfr/dsfr/dist/scheme/scheme.css'
@@ -18,12 +19,15 @@
 </script>
 
 <Header
-  serviceTitle="svelte-dsfr"
-  serviceDescription="design system de l'État pour Sveltekit"
+  serviceTitle="Portage Svelte du Design System de l'État"
+  serviceDescription="Avec Sveltekit - version Dsfr 1.2.1"
   quickLinks={quickLinks}
+  displayParams={true}
 >
   <Navigation navItems={navItems} slot="navigation"/>
 </Header>
+
+<DisplayParamsModal/>
 
 <main>
   <div class="fr-container">
