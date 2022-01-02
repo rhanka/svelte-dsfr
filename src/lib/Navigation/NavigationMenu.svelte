@@ -10,7 +10,7 @@
   import uuid from 'uuid-random'
 
   export let id: string = uuid()
-  export let title: string = "Mon beau menu"
+  export let label: string = "Mon beau menu"
   export let links: any = []
   export let expanded: boolean = false
   export let onClickCallback: any = () => { expanded = !expanded }
@@ -23,7 +23,7 @@
   aria-controls={id}
   on:click={onClickCallback}
 >
-  <span>{{ title }}</span>
+  <span>{{ label }}</span>
   <Icon
     icon="ri:arrow-drop-down-line"
   />

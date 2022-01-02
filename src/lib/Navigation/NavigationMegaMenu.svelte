@@ -9,7 +9,7 @@
   import uuid from 'uuid-random'
 
   export let id: string = uuid()
-  export let title: string
+  export let label: string
   export let description: string = ''
   export let link: any = { to: '#', text: 'Voir toute la rubrique' }
   export let menu: any = []
@@ -24,7 +24,7 @@
   aria-controls={id}
   on:click={onClickCallback}
 >
-  { title }
+  { label }
 </button>
 <div
   id={id}

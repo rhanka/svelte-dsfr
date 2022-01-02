@@ -40,18 +40,18 @@ const toggle = (id) => {
     <slot />
     {#each navItemsWithId as navItem, idx}
       <NavigationItem>
-        {#if navItem && navItem.to && navItem.text}
+        {#if navItem && navItem.to}
           <NavigationMenuLink
             {...navItem}
             on:click={toggle(navItem.id)}
           />
-        {:else if navItem && navItem.title && navItem.links}
+        {:else if navItem && navItem.links}
           <NavigationMenu
             {...navItem}
             expanded={navItem.id === expandedMenuId}
             onClickCallback={() => toggle(navItem.id)}
           />
-        {:else if navItem && navItem.title && navItem.menus}
+        {:else if navItem && navItem.menus}
           <NavigationMegaMenu
             {...navItem}
             expanded={navItem.id === expandedMenuId}
