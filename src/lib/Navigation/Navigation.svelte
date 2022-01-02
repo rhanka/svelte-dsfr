@@ -4,17 +4,16 @@ import '@gouvfr/dsfr/dist/core/core.css'
 import '@gouvfr/dsfr/dist/component/navigation/navigation.css'
 
 import NavigationItem from '$lib/Navigation/NavigationItem.svelte'
-import NavigationMenuLink from '$lib/Navigation//NavigationMenuLink.svelte'
-import NavigationMenu from '$lib/Navigation//NavigationMenu.svelte'
-import NavigationMegaMenu from '$lib/Navigation//NavigationMegaMenu.svelte'
+import NavigationMenuLink from '$lib/Navigation/NavigationMenuLink.svelte'
+import NavigationMenu from '$lib/Navigation/NavigationMenu.svelte'
+import NavigationMegaMenu from '$lib/Navigation/NavigationMegaMenu.svelte'
 
 import uuid from 'uuid-random'
 
 export let id: string = uuid()
-export let lable: string = 'Menu principal'
+export let label: string = 'Menu principal'
 export let navItems: any = []
 let expandedMenuId: string
-let navItems: any
 
 $: navItemsWithId = navItems.map((navItem: any) => {
   return {...navItem, id: uuid()}
