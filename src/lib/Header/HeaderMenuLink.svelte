@@ -7,13 +7,13 @@
 
   import Icon from '@iconify/svelte'
 
-  export let href: string
+  export let to: string
   export let button: boolean
   export let iconRight: boolean
   export let icon: string
   export let label: string
   export let onClick: any = () => {
-    goto(href)
+    goto(to)
   }
 
 </script>
@@ -21,7 +21,7 @@
 {#if button}
   <button
     class="fr-btn"
-    class:fr-link={href}
+    class:fr-link={to}
     class:reverse={iconRight}
     on:click|preventDefault={onClick}
   >
@@ -40,10 +40,10 @@
   </button>
 {:else}
   <a
-    href={href}
+    href={to}
     class="fr-link"
     class:reverse={iconRight}
-    target={href.startsWith('http') ? '_blank' : ''}
+    target={to.startsWith('http') ? '_blank' : ''}
   >
     {#if icon}
       <span
