@@ -3,6 +3,7 @@
   import DisplayParamsModal from '$lib/DisplayParams/DisplayParamsModal.svelte'
   import Navigation from '$lib/Navigation/Navigation.svelte'
   import Footer from '$lib/Footer/Footer.svelte'
+  import Favicon from '$lib/Favicon/Favicon.svelte'
   import '@gouvfr/dsfr/dist/scheme/scheme.css'
   import '@gouvfr/dsfr/dist/core/core.css'
   import '../app.css'
@@ -17,6 +18,8 @@
   ]
 
 </script>
+
+<Favicon/>
 
 <Header
   serviceTitle="Portage Svelte du Design System de l'État"
