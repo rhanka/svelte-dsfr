@@ -27,6 +27,8 @@ jobs:
         run: npm ci
       - name: Build project and export static files
         run: npm run build
+        env:
+          PATHS_BASE: '/svelte-dsfr'
       - name: Add .nojekyll file
         run: touch ./build/.nojekyll
       - name: Deploy

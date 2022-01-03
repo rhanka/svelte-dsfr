@@ -17,6 +17,9 @@ const config = {
       // Options are optional
       plugins: [svg()]
     },
+    paths: {
+			base: process.env.PATHS_BASE || '',
+		},
     adapter: static_adapter({
       pages: 'build',
       assets: 'build',
