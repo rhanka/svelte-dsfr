@@ -14,27 +14,20 @@
   import lightSVG from '@gouvfr/dsfr/dist/artwork/light.svg?url'
   import systemSVG from '@gouvfr/dsfr/dist/artwork/system.svg?url'
 
+  import { browser } from '$app/env';
   import { session } from '$app/stores'
-  import { onMount } from 'svelte'
 
-  let theme: string;
+  import { clickOutside } from '$lib/utils/clickOutside.ts'
+  import SessionStorage from '$lib/utils/SessionStorage.svelte'
 
-  let html: any
-
-  onMount(() => {
-    html = document.documentElement
-    theme = html.data-fr-theme || html.data-fr-scheme || 'system'
-  })
-
-
-  $: console.log(theme)
-
-  $: if (html && theme) {
-    html.setAttribute("data-fr-theme", theme)
-    html.setAttribute("data-fr-scheme", theme)
+  $: if (browser && $session.theme) {
+    document.documentElement.setAttribute("data-fr-theme", $session.theme)
+    document.documentElement.setAttribute("data-fr-scheme", $session.theme)
   }
 
 </script>
+
+<SessionStorage/>
 
 <dialog
   id="fr-theme-modal"
@@ -47,7 +40,7 @@
   <div class="fr-container fr-container--fluid fr-container-md">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
-        <div class="fr-modal__body">
+        <div class="fr-modal__body"  use:clickOutside on:click-outside={() => $session.displayParamsModal = false}>
           <div class="fr-modal__header">
             <button
               class="fr-link--close fr-link"
@@ -69,7 +62,7 @@
                   </legend>
                   <div class="fr-fieldset__content">
                     <div class="fr-radio-group fr-radio-rich">
-                      <input value="light" bind:group={theme} type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
+                      <input value="light" bind:group={$session.theme} type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
                       <label class="fr-label" for="fr-radios-theme-light">Thème clair
                       </label>
                       <div class="fr-radio-rich__img" data-fr-inject-svg>
@@ -78,7 +71,7 @@
                       </div>
                     </div>
                     <div class="fr-radio-group fr-radio-rich">
-                      <input value="dark" bind:group={theme} type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
+                      <input value="dark" bind:group={$session.theme} type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
                       <label class="fr-label" for="fr-radios-theme-dark">Thème sombre
                       </label>
                       <div class="fr-radio-rich__img" data-fr-inject-svg>
@@ -87,7 +80,7 @@
                       </div>
                     </div>
                     <div class="fr-radio-group fr-radio-rich">
-                      <input value="system" bind:group={theme} type="radio" id="fr-radios-theme-system" name="fr-radios-theme">
+                      <input value="system" bind:group={$session.theme} type="radio" id="fr-radios-theme-system" name="fr-radios-theme">
                       <label class="fr-label" for="fr-radios-theme-system">Système
                           <span class="fr-hint-text">Utilise les paramètres système.</span>
                       </label>
