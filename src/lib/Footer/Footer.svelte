@@ -130,7 +130,6 @@
             rel="external"
           >
             licence etalab-2.0
-            <Icon icon="ri:external-link-line" />
           </a>
         </p>
       </div>
