@@ -7,14 +7,11 @@
 
   export let imgSrc: string
   export let to: string
-  export let title: string = 'Simple title'
-  export let description: string = 'Simple description'
-  export let detail: string
   export let altImg: string = ''
   export let noArrow: boolean
   export let horizontal: boolean
 
-  import { goto } from '$app/navigation';
+  import { goto } from '$app/navigation'
 
 </script>
 
@@ -23,29 +20,39 @@
   class="fr-card fr-enlarge-link"
   class:fr-card--horizontal={horizontal}
   data-testid="fr-card"
-  on:click|preventDefault={() => goto(to)}
+  on:click|preventDefault={() => to && goto(to)}
 >
   <div class="fr-card__body">
     <h4
       ref="title"
       class="fr-card__title"
     >
-      <a
-        href={to}
-        class="fr-card__link"
-      >
-        { title }
-      </a>
+      {#if to}
+        <a
+          href={to}
+          class="fr-card__link"
+        >
+          <slot name="title">
+            Simple title
+          </slot>
+        </a>
+      {:else}
+        <slot name="title">
+          Simple title
+        </slot>
+      {/if}
     </h4>
     <p class="fr-card__desc">
-      { description }
+      <slot name="description">
+        Simple description
+      </slot>
     </p>
-    {#if detail}
+    {#if $$slots.detail}
       <p class="fr-card__detail">
-        { detail }
+        <slot name="detail"></slot>
       </p>
     {/if}
-<!--
+  <!--
     <v-icon
       v-if="!noArrow"
       class="fr-card__arrow"
